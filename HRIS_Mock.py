@@ -61,7 +61,7 @@ def main():
     
     elif leave_type == "Short Leave":
         out_time = hris.short_leave_out_time(number_of_short_leaves)
-        st.write(f"Out-time for Short Leave ({number_of_short_leaves} minutes): {out_time}")
+        st.write(f"Out-time for Short Leave ({number_of_short_leaves} ): {out_time}")
 
 # Run the Streamlit app
 if __name__ == "__main__":
