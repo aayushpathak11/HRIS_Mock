@@ -46,22 +46,22 @@ def main():
     number_of_short_leaves = 0
     
     if leave_type == "Short Leave":
-        number_of_short_leaves = st.number_input("Enter Number of Short Leaves (in minutes)", min_value=1, value=1,max_value=3)
+        number_of_short_leaves = st.number_input("Enter Number of Short Leaves", min_value=1, value=1,max_value=3)
     
     # HRIS instance
     hris = HRIS(hr, minute)
     
     if leave_type == "Full Day":
         out_time = hris.full_day_out_time()
-        st.write(f"Out-time for a Full Day: {out_time}")
+        st.markdown(f"<h2 style='text-align: center; font-weight: bold;'>Out-time for a Full Day: {out_time}</h2>", unsafe_allow_html=True)
     
     elif leave_type == "Half Leave":
         out_time = hris.half_leave_out_time()
-        st.write(f"Out-time for Half Leave: {out_time}")
+        st.markdown(f"<h2 style='text-align: center; font-weight: bold;'>Out-time for Half Leave: {out_time}</h2>", unsafe_allow_html=True)
     
     elif leave_type == "Short Leave":
         out_time = hris.short_leave_out_time(number_of_short_leaves)
-        st.write(f"Out-time for Short Leave ({number_of_short_leaves} ): {out_time}")
+        st.markdown(f"<h2 style='text-align: center; font-weight: bold;'>Out-time for Short Leave ({number_of_short_leaves}): {out_time}</h2>", unsafe_allow_html=True)
 
 # Run the Streamlit app
 if __name__ == "__main__":
